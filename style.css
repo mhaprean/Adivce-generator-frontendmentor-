@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Manrope', 'sans-serif';
+}
+
+:root {
+  --main-background-color: hsl(218, 23%, 16%);
+  --card-background-color: hsl(217, 19%, 24%);
+  --primary-color: hsl(150, 100%, 66%);
+}
+
+body {
+  background: var(--main-background-color);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 100vh;
+}
+
+.container .card {
+  margin: auto;
+  background-color: var(--card-background-color);
+  padding: 20px;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  top: -200px;
+}
+
+.container .card .title {
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 12px;
+}
+
+.container .card .quote {
+  font-size: 20px;
+  color: #cee3e9;
+  margin: 20px 0;
+  max-width: 300px;
+  text-align: center;
+}
+
+.container .card .separator {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.container .card .change-button {
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  background: var(--primary-color);
+  border-radius: 50px;
+  width: 40px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  bottom: -20px;
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+}
+
+.container .card .change-button:hover {
+  -webkit-box-shadow: 0 0 20px var(--primary-color);
+          box-shadow: 0 0 20px var(--primary-color);
+  cursor: pointer;
+}
+
+.container .card .change-button img {
+  width: 15px;
+  height: 15px;
+}
+
+.desktop {
+  display: none;
+}
+
+@media only screen and (min-width: 500px) {
+  .mobile {
+    display: none;
+  }
+  .desktop {
+    display: block;
+  }
+}
+/*# sourceMappingURL=style.css.map */

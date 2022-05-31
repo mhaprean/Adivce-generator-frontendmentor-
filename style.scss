@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Manrope', 'sans-serif';
+}
+
+:root {
+    --main-background-color: hsl(218, 23%, 16%);
+    --card-background-color: hsl(217, 19%, 24%);
+    --primary-color: hsl(150, 100%, 66%);
+}
+
+body {
+    background: var(--main-background-color);
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+
+    .card {
+        margin: auto;
+        background-color: var(--card-background-color);
+        padding: 20px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        top: -200px;
+
+        .title {
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 12px;
+        }
+
+        .quote {
+            font-size: 20px;
+            color: hsl(193, 38%, 86%);
+            margin: 20px 0;
+            max-width: 300px;
+            text-align: center;
+        }
+
+        .separator {
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .change-button {
+            padding: 0;
+            margin: 0;
+            border: none;
+            outline: none;
+            background: var(--primary-color);
+            border-radius: 50px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            bottom: -20px;
+            transition: 0.3s all ease-in-out;
+
+            &:hover {
+                box-shadow: 0 0 20px var(--primary-color);
+                cursor: pointer;
+            }
+
+            img {
+                width: 15px;
+                height: 15px;
+            }
+        }
+    }
+}
+
+.desktop {
+    display: none;
+}
+
+@media only screen and (min-width: 500px) {
+
+    .mobile {
+        display: none;
+    }
+    .desktop {
+      display: block;
+    }
+  }

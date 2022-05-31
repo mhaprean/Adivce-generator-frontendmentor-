@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="style.css">
+
+  <title>Frontend Mentor | Advice generator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="card">
+      <p class="title">advice #81</p>
+      <p class="quote">“Age is of no importance, unless you are a cheese.”</p>
+
+      <img class="separator mobile" src="images/pattern-divider-mobile.svg" alt="">
+      <img class="separator desktop" src="images/pattern-divider-desktop.svg" alt="">
+
+      <button class="change-button" onclick="getQuote()"><img src="images/icon-dice.svg" alt=""></button>
+    </div>
+  </div>
+
+  <script>
+
+    let idx = 1;
+
+    const getQuote = () => {
+      fetch('https://api.adviceslip.com/advice?q=' + idx)
+        .then(response => response.json())
+        .then(data => {
+          document.querySelector('.title').innerHTML = `Advice #${data.slip.id}`;
+          document.querySelector('.quote').innerHTML = `“${data.slip.advice}”`;
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+
+        idx++;
+
+    }
+
+  </script>
+</body>
+
+</html>
